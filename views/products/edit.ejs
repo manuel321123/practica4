@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Editar Producto</title>
+</head>
+<body>
+    <h1>Editar Producto</h1>
+    <form id="productForm" action="/products/edit/<%= product.id %>" method="POST">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" value="<%= product.name %>" required>
+        <span class="error" id="nameError"></span>
+
+        <label for="price">Precio:</label>
+        <input type="number" id="price" name="price" value="<%= product.price %>" required>
+        <span class="error" id="priceError"></span>
+
+        <label for="description">Descripción:</label>
+        <textarea id="description" name="description" required><%= product.description %></textarea>
+        <span class="error" id="descriptionError"></span>
+
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="/products">Regresar a la Lista de Productos</a>
+    <script src="/js/validate.js"></script>
+</body>
+</html>
